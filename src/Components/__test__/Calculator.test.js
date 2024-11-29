@@ -14,7 +14,15 @@ test('Return the sum of two numbers separated by comma', () => {
     const result = Calculator.add('1,5');
     expect(result).toBe(6);
 });
+
 test('Return handle new lines between numbers', () => {
     const result = Calculator.add('1\n2,3');
     expect(result).toBe(6);
 });
+
+test('should support custom delimiters', () => {
+    const result = Calculator.add('//;\n1;2');
+    expect(result).toBe(3);
+});
+  
+
